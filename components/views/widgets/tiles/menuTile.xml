@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MenuTile" extends="BaseGroup">
+    <script type="text/brightscript" uri="./menuTile.brs" />
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChanged" />
+        <field id="width" type="float" onChange="updateLayout" />
+        <field id="height" type="float" onChange="updateLayout" />
+
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChanged" />
+        <field id="itemHasFocus" type="boolean" onChange="onItemFocusChanged" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChanged" />
+    </interface>
+    <children>
+        <LayoutGroup 
+            id="layout"
+            layoutDirection="horiz"
+            itemSpacings="[27]"
+            vertAlignment="center"
+            translation="[0,23]" >
+            <Poster
+                id="iconBg"
+                width="36"
+                height="36"
+                loadDisplayMode="scaleToFit" >
+                <Poster
+                    id="icon"
+                    width="36"
+                    height="36"
+                    loadDisplayMode="scaleToFit" />
+            </Poster>
+            <LabelPlus
+                id="title"
+                height="36"
+                vertAlign="center"
+                translation="[30,0]"
+                font="font:SmallSystemFont"
+                text="Title" />
+        </LayoutGroup>
+    </children>
+</component>

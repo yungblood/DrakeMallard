@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="SideNav" extends="BaseGroup">
+    <script type="text/brightscript" uri="./sideNav.brs" />
+    <interface>
+        <field id="shadowUri"       alias="shadow.uri" />
+        <field id="content"         alias="mainMenu.content" />
+        <field id="jumpToItem"      alias="mainMenu.jumpToItem" />
+        <field id="itemFocused"     alias="mainMenu.itemFocused" />
+        <field id="itemUnfocused"   alias="mainMenu.itemUnfocused" />
+        <field id="headers"         type="nodearray"    onChange="updateNav"    alwaysNotify="true" />
+        <field id="footers"         type="nodearray"    onChange="updateNav"    alwaysNotify="true" />
+        <field id="expandWidths"    type="intarray"     onChange="updateNav"    alwaysNotify="true" />
+        <field id="expand"          type="integer"      onChange="updateExpand" alwaysNotify="true" />
+        <field id="itemSelected"    type="node"                                 alwaysNotify="true" />
+    </interface>
+    <children>
+        <Poster id="shadow" height="1080" uri="pkg:/images/sidenavShadow.png" >
+            <LayoutGroup id="header" layoutDirection="horiz" vertAlignment="top" translation="[39,60]" />
+            <LayoutGroup id="main" vertAlignment="center" translation="[21,540]" >
+                <MarkupList id="mainMenu" itemComponentName="MenuTile" itemSize="[350,36]" 
+                    numRows="10" itemSpacing="[0,60]" vertFocusAnimationStyle="floatingFocus"
+                    drawFocusFeedback="false" />
+            </LayoutGroup>
+            <LayoutGroup id="footer" layoutDirection="horiz" vertAlignment="bottom" translation="[48,1023]" />
+        </Poster>
+    </children>
+</component>

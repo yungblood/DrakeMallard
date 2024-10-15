@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="HomeScreen" extends="BaseGroup">
+    <script type="text/brightscript" uri="./homeScreen.brs" />
+    <interface>
+        <field id="headers"         alias="menu.headers" />
+        <field id="footers"         alias="menu.footers" />
+        <field id="menu"            alias="menu.content" />
+        <field id="itemSelected"    type="node"         alwaysNotify="true" />
+        <field id="selectItem"      type="node"         onChange="onItemSelected"   alwaysNotify="true" />
+        <field id="action"          type="string"       value=""                    alwaysNotify="true" />
+        <field id="jumpToItem"      alias="menu.jumpToItem" />
+    </interface>
+    <children>
+        <Video id="preview" width="1920" height="1080" visible="false" />
+        <MaskGroup id="mask" maskSize="[1920,1080]" maskUri="pkg:/images/mouseMask.png">
+            <Poster id="background" uri="pkg:/images/tv-1920x1080.jpg" width="1920" height="1080" />
+        </MaskGroup>
+        <LayoutGroup id="lg" layoutDirection="vert" vertAlignment="top" itemSpacings="6" translation="[100,100]" >
+            <Poster id="title" width="600">
+                <Label id="text_title" width="600" />
+            </Poster>
+            <Label id="callToAction" width="600" />
+        </LayoutGroup>
+
+        <Poster id="shadow" translation="[0,555]" width="1920" height="1080" uri="pkg:/images/missing.jpg" opacity="0.1">
+            <GrowthRowList id="list" inheritParentOpacity="false" translation="[100,0]" itemComponentName="RowListItem" numRows="2" 
+                itemSize="[1920,258]" rowHeights="[]" rowItemSize="[[330,186]]" itemSpacing="[0,15]" 
+                rowItemSpacing="[[15,0]]" rowLabelOffset="[[50,6]]" rowFocusAnimationStyle="floatingFocus"
+                showRowLabel="[true]" showRowCounter="[true]" rowLabelColor="0xFFFFFFFF" rowCounterRightOffset="55" 
+                focusXOffset="50" rowLabelFont="dictionary:theRowListFont" growthPercentage="0.15" />
+        </Poster>
+        <SideNav id="menu" shadowUri="pkg:/images/sidenavShadow.png" expandWidths="[63,418]" expand="0" />
+
+        <ParallelAnimation id="previewAnimation">
+            <Animation
+                id="backgroundAnim"
+                duration=".4">
+                <FloatFieldInterpolator
+                    id="backgroundInterp"
+                    key="[0,1]"
+                    keyValue="[1,0]"
+                    fieldToInterp="background.opacity" />
+            </Animation>
+            <Animation
+                id="listAnim"
+                duration=".4">
+                <Vector2DFieldInterpolator
+                    id="listInterp"
+                    key="[0,1]"
+                    keyValue="[[0,555],[0,729]]"
+                    fieldToInterp="shadow.translation" />
+            </Animation>
+        </ParallelAnimation>
+
+        <Timer id="previewDelay" duration="5" />
+        <Timer id="selectTimer" duration="15" />
+    </children>
+</component>

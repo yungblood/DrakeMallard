@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="GrowthRowList" extends="Group">
+    <script type="text/brightscript" uri="./growthRowList.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="itemComponentName"       type="string"           onChange="onCarouselFieldChanged" />
+        <field id="rowTitleComponentName"   type="string"           onChange="onCarouselFieldChanged" />
+        <field id="numRows"                 type="integer"          onChange="onListFieldChanged" />
+        <field id="itemSize"                type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="rowHeights"              type="floatarray"       onChange="onCarouselFieldChanged" />
+        <field id="rowSpacings"             type="floatarray"       onChange="onListFieldChanged" />
+        <field id="rowItemSize"             type="vector2darray"    onChange="onCarouselFieldChanged" />
+        <field id="itemSpacing"             type="vector2d"         onChange="onListFieldChanged" />
+        <field id="rowItemSpacing"          type="vector2darray"    onChange="onCarouselFieldChanged" />
+        <field id="focusXOffset"            type="floatarray"       onChange="onCarouselFieldChanged" />
+        <field id="rowLabelOffset"          type="vector2darray"    onChange="onCarouselFieldChanged" />
+        <field id="rowFocusAnimationStyle"  type="string"           onChange="onCarouselFieldChanged" />
+        <field id="showRowLabel"            type="boolarray"        onChange="onCarouselFieldChanged" />
+        <field id="showRowCounter"          type="boolarray"        onChange="onCarouselFieldChanged" />
+        <field id="rowLabelColor"           type="color"            onChange="onCarouselFieldChanged" />
+        <field id="rowCounterRightOffset"   type="integer"          onChange="onCarouselFieldChanged" />
+        <field id="rowLabelFont"            type="string"           onChange="onCarouselFieldChanged" />
+        <field id="content"                 type="node"             onChange="onContentChanged"     alwaysNotify="true" />
+        <field id="rowItemSelected"         type="vector2d"         value="[-1,-1]"                 alwaysNotify="true" />
+        <field id="rowItemFocused"          type="vector2d"         value="[-1,-1]" />
+        <field id="rowItemUnfocused"        type="vector2d"         value="[-1,-1]" />
+        <field id="currFocusColumn"         type="float"            value="-1" />
+        <field id="currFocusRow"            type="float"            value="-1" />
+        <field id="itemSelected"            type="integer"          value="-1" />
+        <field id="itemFocused"             type="integer"          value="-1" />
+        <field id="itemUnfocused"           type="integer"          value="-1" />
+        <field id="jumpToItem"              type="integer"          onChange="onIndexFieldChanged" />
+        <field id="jumpToRowItem"           type="vector2d"         onChange="onIndexFieldChanged" />
+        <field id="animateToItem"           type="integer"          onChange="onIndexFieldChanged" />
+        <field id="animateToRowItem"        type="vector2d"         onChange="onIndexFieldChanged" />
+        <field id="growthPercentage"        type="float"            onChange="onCarouselFieldChanged" />
+    </interface>
+    <children>
+        <LayoutGroup id="list" layoutDirection="vert" vertAlignment="top" />
+        <Animation
+            id="listAnim"
+            duration=".4">
+            <FloatFieldInterpolator
+                id="listInterp"
+                key="[0,1]"
+                keyValue="[1,0]" />
+        </Animation>
+    </children>
+</component>

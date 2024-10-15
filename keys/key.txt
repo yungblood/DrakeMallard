@@ -1,0 +1,7 @@
+genkey
+YN000X145628 (Living room - 9.0.0.4151)
+>............+++
+..........................+++
+Password: b4thYXZ2KSmp0NC3t3FxZw==
+DevID: 70525792a90842c437ff91b393746fe2ef92a40e
+>

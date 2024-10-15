@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="StandardCollection" extends="DmcBase">
+    <script type="text/brightscript" uri="./standardCollection.brs" />
+    <interface>
+        <field id="collectionId" type="string" />
+    </interface>
+</component>

@@ -1,0 +1,47 @@
+{
+    "keys": {
+        "key_dir": "../keys/",
+        "app":{
+            "keyed_pkg": "DisneyDemo.pkg",
+            "password": "n9+7GtnV50A9gbSHjdgj9Q=="
+        }
+    },
+    "projects": {
+        "default": "app",
+        "app": {
+            "app_name": "disney_demo",
+            "directory": ".",
+            "source_files": [
+                "components",
+                "images",
+                "source",
+                "manifest",
+                "fonts",
+                "data"
+            ],
+            "exclude": [
+                ".git",
+                ".gitignore",
+                ".history",
+                ".roku_config.json",
+                "keys",
+                "scripts"
+            ],
+            "stage_method": "script",
+            "stages": {
+                "prod": {
+                    "script": {
+                        "stage": "powershell scripts/stage.ps1 prod"
+                    },
+                    "key": "app"
+                },
+                "dev": {
+                    "script": {
+                        "stage": "powershell scripts/stage.ps1 dev"
+                    },
+                    "key": "app"
+                }
+            }
+        }
+    }
+}

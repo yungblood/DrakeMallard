@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="menu" extends="ContentNode">
+    <script type="text/brightscript" uri="./menu.brs" />
+    <interface>
+        <field id="json" type="assocarray" onChange="onJsonChanged" />
+
+        <field id="foreground"  type="string" />
+        <field id="background"  type="string" />
+    </interface>
+</component>

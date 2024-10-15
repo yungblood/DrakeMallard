@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="DmcVideo" extends="DmcBase">
+    <script type="text/brightscript" uri="./dmcVideo.brs" />
+    <interface>
+        <field id="extra" type="string" />
+    </interface>
+</component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="GrowthRow" extends="LayoutGroup">
+    <script type="text/brightscript" uri="./growthRow.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="itemComponentName"       alias="list.itemComponentName" />
+        <field id="rowTitleComponentName"   type="string"           onChange="onCarouselFieldChanged" />
+        <field id="focusXOffset"            type="floatarray"       onChange="onCarouselFieldChanged" />
+        <field id="itemSize"                type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="rowItemSize"             type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="itemSpacing"             type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="rowItemSpacing"          type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="rowLabelOffset"          type="vector2d"         onChange="onCarouselFieldChanged" />
+        <field id="rowFocusAnimationStyle"  type="string"           onChange="onCarouselFieldChanged" />
+        <field id="showRowLabel"            alias="rowLabel.visible" />
+        <field id="showRowCounter"          alias="rowCounter.visible" />
+        <field id="rowLabelColor"           type="color"            onChange="onCarouselFieldChanged" />
+        <field id="rowCounterRightOffset"   type="integer"          onChange="onCarouselFieldChanged" />
+        <field id="rowLabelFont"            type="string"           onChange="onCarouselFieldChanged" />
+        <field id="content"                 alias="list.content"    onChange="onContentChanged"     alwaysNotify="true" />
+        <field id="currFocusColumn"         type="float" />
+        <field id="itemSelected"            type="integer"                                          alwaysNotify="true" />
+        <field id="itemFocused"             type="integer" />
+        <field id="itemUnfocused"           type="integer" />
+        <field id="jumpToItem"              alias="list.jumpToItem" />
+        <field id="animateToItem"           alias="list.animateToItem" />
+        <field id="growthPercentage"        type="float"            onChange="onCarouselFieldChanged" />
+    </interface>
+    <children>
+        <LayoutGroup id="rowHeader">
+            <Label id="rowLabel" />
+            <Label id="rowCounter" />
+        </LayoutGroup>
+        <TargetList id="list">
+            <Poster id="focused" width="0" height="0" opacity="0"/>
+        </TargetList>
+        <Rectangle id="itemSpacing" color="0x00000000" width="1" />
+    </children>
+</component>

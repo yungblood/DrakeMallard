@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AppScene" extends="Scene">
+    <script type="text/brightscript" uri="./appScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="launchInfo" type="assocarray" onChange="onLaunchInfoChanged" />
+        <field id="deeplink" type="assocarray" onChange="onDeeplinkChanged" alwaysNotify="true" />
+        <field id="transport" type="assocarray" onChange="onTransportChanged" alwaysNotify="true" />
+        <field id="close" type="boolean" alwaysNotify="true" value="false"/>
+        <field id="action" type="string" alwaysNotify="true"/>
+        <field id="beacon" type="string" onChange="sendSignalBeacon" alwaysNotify="false" />
+    </interface>
+    <children>
+        <Group id="screens" />
+
+        <ChannelStore id="store" />
+    </children>
+</component>

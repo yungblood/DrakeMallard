@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="DmcBase" extends="ContentNode">
+    <script type="text/brightscript" uri="./dmcBase.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="json" type="assocarray" onChange="onJsonChanged" />
+
+        <field id="contentId" type="string" />
+        <field id="callToAction" type="string" />
+        <field id="region" type="string" />
+        <field id="kidsMode" type="boolean" />
+        <field id="encodedSeriesId" type="string" />
+        <field id="image" type="assocArray" />
+        <field id="slug" type="string" />
+        <field id="ratings" type="stringArray" />
+        <field id="releases" type="stringArray" />
+        <field id="videoArt" type="stringArray" />
+    </interface>
+</component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="DetailScreen" extends="BaseGroup">
+    <script type="text/brightscript" uri="./detailScreen.brs" />
+    <interface>
+        <field id="content"     type="node"     alwaysNotify="true" />
+        <field id="close"       type="boolean"  value="false" />
+    </interface>
+    <children>
+        <Poster id="background" width="1920" height="1080">
+            <Label id="label" wrap="true" width="1920" height="1080" />
+        </Poster>
+    </children>
+</component>

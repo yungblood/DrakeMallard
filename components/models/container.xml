@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Container" extends="ContentNode">
+    <script type="text/brightscript" uri="./container.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="json" type="assocarray" onChange="onJsonChanged" />
+
+        <field id="setId" type="string" />
+        <field id="refId" type="string" />
+        <field id="type" type="string" />
+        <field id="class" type="string" />
+        <field id="sourceEntity" type="string" />
+        <field id="language" type="string" />
+    </interface>
+</component>

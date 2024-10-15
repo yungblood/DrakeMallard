@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE rokuComponent>
+<component name="rowListItem" extends="BaseGroup">
+	<script type="text/brightscript" uri="./rowListItem.brs" />
+	<interface> 
+		<field id="itemContent" type="node" onChange="itemContentChanged"/>
+		<field id="currTarget" type="float" onChange="onLayoutChanged"/>
+		<field id="currRect" type="rect2D" onChange="onLayoutChanged"/>
+		<field id="index" type="integer" onChange="onLayoutChanged"/>
+		<field id="groupHasFocus" type="boolean" onChange="onLayoutChanged"/>
+		<field id="focusPercent" type="float" onChange="onLayoutChanged"/>
+		<field id="itemHasFocus" type="boolean" onChange="onLayoutChanged"/>
+	</interface>
+	<children>
+		<Poster id="base" width="330" height="186" uri="pkg:/images/missing.jpg">
+			<Poster id="itemImage" width="330" height="186">
+				<Label id="itemText" horizAlign="center" vertAlign="center" width="330" height="186" wrap="true" />
+			</Poster>
+		</Poster>
+	</children>
+</component>

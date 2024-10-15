@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ScrollableMultiStyleText" extends="Group">
+    <script type="text/brightscript" uri="./scrollableMultiStyleText.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="width"                   type="float" value="0.0" onChange="onFieldChanged"/>
+        <field id="height"                  type="float" value="0.0" onChange="onFieldChanged"/>
+        <field id="text"                    type="string" value="" onChange="onFieldChanged"/>
+        <field id="color"                   type="color" value="0xddddddff" onChange="onFieldChanged"/>
+        <field id="font"                    type="string" value="" onChange="onFieldChanged"/>
+        <field id="lineSpacing"             alias="label.lineSpacing" />
+        <field id="horizAlign"              alias="label.horizAlign" />
+        <field id="vertAlign"               alias="label.vertAlign" />
+        <field id="drawingStyles"           alias="label.drawingStyles" />
+        <field id="scrollbarTrackBitmapUri" alias="track.uri" />
+        <field id="scrollbarThumbBitmapUri" alias="thumb.uri" />
+    </interface>
+    <children>
+        <MultiStyleLabel id="label" wrap="true" />
+        <Poster id="track" visible="false">
+            <Poster id="thumb" />
+        </Poster>
+        <Timer id="keyTimer" repeat="true" duration="0.1" />
+    </children>
+</component>

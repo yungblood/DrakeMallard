@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HomeTask" extends="Task">
+    <script type="text/brightscript" uri="./homeTask.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/http.brs" />
+    <script type="text/brightscript" uri="pkg:/components/shared/utils.brs" />
+    <interface>
+        <field id="response" type="assocarray" />
+    </interface>
+</component>
